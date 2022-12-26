@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  app:
+      build:
+          context: .
+          dockerfile: ./dev.Dockerfile
+      volumes:
+        - ./:/app
+        - /app/node_modules
+      ports:
+            - 3001:3000
+      command: npm run start
+
+      tty: true
